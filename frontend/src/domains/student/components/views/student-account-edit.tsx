@@ -54,7 +54,7 @@ export const StudentAccountEdit: React.FC<StudentAccountEditProps> = ({
         if (['admissionDate', 'dob'].includes(key)) {
           setValue(key, typeof value === 'string' ? parseISO(value) : value);
         } else {
-          setValue(key, value);
+          setValue(key, key === 'roll' ? value.toString() : value);
         }
       }
     }
